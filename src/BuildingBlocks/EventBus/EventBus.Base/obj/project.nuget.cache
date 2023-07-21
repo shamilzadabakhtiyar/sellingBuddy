@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Dp1mwZNWk9yAhkKm/ca6haiC7ppn9kdos03XsZg8RNnzKVptZjr1m34ssaq7N18iyA8aRbj+6bu4KEqCyVWdrw==",
+  "dgSpecHash": "i6nDNGJhVT1s3G2zX9Vms99jyyEOP+e3R57o8XT8wVTu0bNZwnQhU0VDKFSjfOinxjK4zaIrh9LTE1pGamwM/g==",
   "success": true,
   "projectFilePath": "C:\\Users\\Admin\\OneDrive\\Desktop\\Software Engineer\\SellingBuddy\\src\\BuildingBlocks\\EventBus\\EventBus.Base\\EventBus.Base.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
   ],
   "logs": []
