@@ -14,11 +14,11 @@ namespace EventBus.Base.Events
     {
         public readonly IServiceProvider ServiceProvider;
         public readonly IEventBusSubscriptionManager SubsManager;
-        private EventBusConfig eventBusConfig;
+        public EventBusConfig EventBusConfig { get; set; }
 
         public BaseEventBus(EventBusConfig config, IServiceProvider serviceProvider)
         {
-            eventBusConfig = config;
+            EventBusConfig = config;
             ServiceProvider = serviceProvider;
             SubsManager = new InMemoryEventBusSubscriptionManager(ProcessEventName);
         }
@@ -33,11 +33,12 @@ namespace EventBus.Base.Events
         }
         public virtual string GetSubName(string eventName) 
         {
-            return $"{eventBusConfig.SubscriberClientAppName}.{ProcessEventName(eventName)}";
+            return $"{EventBusConfig.SubscriberClientAppName}.{ProcessEventName(eventName)}";
         }
-        public virtual void Dispose(bool disposing) 
+        public virtual void Dispose() 
         {
-            eventBusConfig = null;
+            EventBusConfig = null;
+            SubsManager.Clear();
         }
         public async Task<bool> ProcessEvent(string eventName, string message)
         {
@@ -71,5 +72,6 @@ namespace EventBus.Base.Events
         public abstract void UnSubscribe<T, TH>()
             where T : IntegrationEvent
             where TH : IIntegrationEventHandler<T>;
+
     }
 }
